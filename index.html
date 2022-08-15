@@ -9,31 +9,52 @@
 </head>
 <body>
 	<div class="container mt-5">
-		<nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light">
-			<div class="container">
-				<a href="#" class="navbar-brand"><img src="bootstrap/b-logo.png" class="align-text-top" width="30">Bootstrap</a>
-				<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navID">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="navbar-collapse collapse collapse-sm"  id="navID">
-					<ul class="navbar-nav me-2 ms-auto">
-						<li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">Link</a></li>
-						<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Dropdown Link</a></li>
-							</ul>
-						</li>
-						<li class="nav-item"><a href="#" class="nav-link disabled">Disabled</a></li>
-					</ul>
-					<form class="d-flex">
-						<input type="search" class="form-control me-2" placeholder="search">
-						<button class="btn btn-outline-success">Search</button>
-					</form>
+		<form class="row needs-validation g-3" novalidate>
+			<div class="col-4 position-relative">
+				<label class="form-label">First Name</label>
+				<input type="text" class="form-control" required>
+				<div class="valid-tooltip">Looks Good!</div>
+				<div class="invalid-tooltip">Please write your name!</div>
+			</div>
+			<div class="col-4 position-relative">
+				<label class="form-label">Last Name</label>
+				<input type="text" class="form-control" required>
+				<div class="valid-tooltip">Looks Good!</div>
+				<div class="invalid-tooltip">Please write your last name!</div>
+			</div>
+			<div class="col-4 position-relative">
+				<label class="form-label">Username</label>
+				<div class="input-group">
+					<span class="input-group-text">@</span>
+					<input type="text" class="form-control" required>
+					<div class="valid-tooltip">Looks Good!</div>
+					<div class="invalid-tooltip">Please choose a username!</div>
 				</div>
 			</div>
-		</nav>
+			<div class="col-12"><button class="btn btn-primary" type="submit">Submit</button></div>
+		</form>
 	</div>
+	<script>
+		// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(() => {
+			'use strict'
+
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			const forms = document.querySelectorAll('.needs-validation')
+
+			// Loop over them and prevent submission
+			Array.from(forms).forEach(form => {
+				form.addEventListener('submit', event => {
+					if (!form.checkValidity()) {
+						event.preventDefault()
+						event.stopPropagation()
+					}
+
+					form.classList.add('was-validated')
+				}, false)
+			})
+		})()
+	</script>
 </script>
 <script src="bootstrap/bootstrap.bundle.js"></script>
 </body>
