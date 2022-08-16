@@ -9,7 +9,6 @@
 </head>
 <body>
 	<div class="container mt-5">
-
 		<div class="card text-center">
 			<div class="card-header">
 				<ul class="nav nav-tabs card-header-tabs">
@@ -27,10 +26,10 @@
 			<div class="card-body">
 				<h5 class="card-title">Special title treatment</h5>
 				<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-				<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modID">Go Somewhere</button>
+				<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modID">Register</button>
 			</div>
 		</div>
-		<div class="modal fade" id="modID">
+		<div class="modal fade" id="modID" data-bs-backdrop="static" data-bs-keyboard="false">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -38,11 +37,64 @@
 						<button class="btn-close" data-bs-dismiss="modal"></button>
 					</div>
 					<div class="modal-body">
-						<p>Modal body text goes here.</p>
+						<div class="accordion" id="accID">
+							<div class="accordion-item">
+								<h5 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accOne">Don't forget to read our rules</button></h5>
+								<div class="accordion-collapse collapse" id="accOne">
+									<div class="accordion-body">
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, facere nisi quia soluta fugit id? Mollitia quaerat id consequatur harum saepe provident praesentium illo magnam, itaque iusto nihil vitae? Repudiandae ratione corporis quos quidem similique enim esse quia fugit maxime voluptates, molestiae itaque quod iure tempora distinctio officiis, cupiditate reiciendis! Consequuntur aperiam ex ducimus excepturi distinctio, a aliquid inventore. Optio vero debitis fugit quo perspiciatis vel soluta assumenda sed officiis distinctio iure recusandae minus enim magni, at commodi consequuntur. Impedit eius quas suscipit esse eum provident, ducimus maiores a deserunt asperiores temporibus incidunt, laboriosam dolores nobis. Aut maxime alias iure?</p>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<button class="btn btn-primary">Save changes</button>
+						<button class="btn btn-primary" data-bs-target="#modTwo" data-bs-toggle="modal">Second space</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modTwo" data-bs-backdrop="static" data-bs-keyboard="false">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Modal title</h5>
+						<button class="btn-close" data-bs-dismiss="modal"></button>
+					</div>
+					<div class="modal-body">
+						<div class="carousel slide" id="carID" data-bs-ride="carousel">
+							<div class="carousel-indicators">
+								<button data-bs-target="#carID" data-bs-slide-to="0" class="active"></button>
+								<button data-bs-target="#carID" data-bs-slide-to="1"></button>
+								<button data-bs-target="#carID" data-bs-slide-to="2"></button>
+							</div>
+							<div class="carousel-inner">
+								<div class="carousel-item active" data-bs-interval="500">
+									<img src="bootstrap/b-logo.png" class="w-100">
+									<div class="carousel-caption">
+										<h5>Lorem, ipsum dolor.</h5>
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+									</div>
+								</div>
+								<div class="carousel-item" data-bs-interval="500">
+									<img src="bootstrap/b-logo.png" class="w-100">
+								</div>
+								<div class="carousel-item" data-bs-interval="500">
+									<img src="bootstrap/b-logo.png" class="w-100">
+								</div>
+							</div>
+							<button class="carousel-control-next" data-bs-target="#carID" data-bs-slide="next">
+								<span class="carousel-control-next-icon"></span>
+							</button>
+							<button class="carousel-control-prev" data-bs-target="#carID" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon"></span>
+							</button>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button class="btn btn-primary" data-bs-target="#modID" data-bs-toggle="modal">First space</button>
 					</div>
 				</div>
 			</div>
