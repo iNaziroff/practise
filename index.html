@@ -8,11 +8,55 @@
 	<link rel="stylesheet" href="bootstrap/bootstrap.css">
 </head>
 <body>
-	<div class="container mt-3 ">
-		<div class="progress">
-			<div class="progress-bar progress-bar-animated bg-success progress-bar-striped w-50">50%</div>
+	<div class="container mt-3">
+		<div class="dropdown" novalidate>
+			<button class="btn btn-outline-primary dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown">Login</button>
+			<form class="dropdown-menu needs-validation p-4" novalidate>
+				<div class="mb-3">
+					<label for="email" class="form-label">Email</label>
+					<input type="email" class="form-control" placeholder="email@example.com" id="email" required>
+					<div class="valid-feedback">Looks Great!</div>
+					<div class="invalid-feedback">Have a Problem?</div>
+				</div>
+				<div class="mb-3">
+					<label for="password" class="form-label">Password</label>
+					<input type="password" class="form-control" placeholder="Password" id="password" required>
+					<div class="valid-feedback">Looks Great!</div>
+					<div class="invalid-feedback">Have a Problem?</div>
+				</div>
+				<div class="mb-3">
+					<div class="form-check">
+						<input id="checkbox" type="checkbox" class="form-check-input" required>
+						<label for="checkbox" class="form-check-label">Remember me</label>
+						<div class="valid-feedback">Looks Great!</div>
+						<div class="invalid-feedback">You must agree before submitting</div>
+					</div>
+				</div>
+				<button class="btn btn-primary">Sign In</button>
+			</form>
 		</div>
 	</div>
+	<script>
+		// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(() => {
+			'use strict'
+
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			const forms = document.querySelectorAll('.needs-validation')
+
+			// Loop over them and prevent submission
+			Array.from(forms).forEach(form => {
+				form.addEventListener('submit', event => {
+					if (!form.checkValidity()) {
+						event.preventDefault()
+						event.stopPropagation()
+					}
+
+					form.classList.add('was-validated')
+				}, false)
+			})
+		})()
+	</script>
 	<script src="bootstrap/bootstrap.bundle.js"></script>
 </body>
 </html>
