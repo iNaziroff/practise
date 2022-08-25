@@ -9,39 +9,50 @@
 </head>
 <body>
 	<div class="container mt-3">
-		<nav class="navbar navbar-dark bg-dark fixed-top">
-			<div class="container-fluid">
-				<a href="#" class="navbar-brand">Offcanvas Dark Navbar</a>
-				<button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offID">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+		<div class="row" >
+			<div class="col-4">
+				<nav id="navID" class="flex-column h-100 border-end align-items-stretch">
+					<nav class="flex-column nav nav-pills">
+						<a href="#scroll1" class="nav-link">First Item</a>
+						<nav class="flex-column nav nav-pills">
+							<a href="#scroll2" class="nav-link ms-3 my-1">Second Item</a>
+							<a href="#scroll3" class="nav-link ms-3 my-1">Third Item</a>
+						</nav>
+					</nav>
+					<nav class="nav nav-pills flex-column">
+						<a href="#scroll4" class="nav-link">Fourth Item</a>
+						<nav class="flex-column nav nav-pills">
+							<a href="#scroll5" class="nav-link ms-3 my-1">Fifth Item</a>
+						</nav>
+					</nav>
+				</nav>
+
 			</div>
-			<div class="offcanvas text-bg-dark offcanvas-end" id="offID">
-				<div class="offcanvas-header">
-					<h4 class="offcanvas-title">Offcanvas title</h4>
-					<button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-				</div>
-				<div class="offcanvas-body">
-					<ul class="navbar-nav">
-						<li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">Link</a></li>
-						<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-bd-toggle="dropdown">Dropdown</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Action</a></li>
-								<li><a class="dropdown-item" href="#">Another action</a></li>
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="#">Something else here</a></li>
-							</ul>
-						</li>
-					</ul>
-					<form class="d-flex">
-						<input type="search" class="form-control me-2" placeholder="Search">
-						<button class="btn btn-success">Seach</button>
-					</form>
+			<div class="col-8">
+				<div class="bg-light p-3 rounded-2" data-bs-spy="scroll" data-bs-target="#navID" data-bs-smooth-scroll="true" data-bs-root-margin="0px 0px 0px -40%">
+					<h4 id="scroll1">First Heading</h4>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit dolorum consequuntur ipsum non architecto eaque soluta, aliquid inventore culpa aliquam totam tempora voluptatem eius. Illum eos voluptate magni vero consectetur architecto doloremque. Porro neque, ex dolore consequatur ullam rerum nulla, inventore voluptas quod labore, optio ab nostrum dicta fugiat ducimus odit vel veniam nisi. Quae aperiam voluptate blanditiis?</p>
+					<h4 id="scroll2">Second Heading</h4>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit dolorum consequuntur ipsum non architecto eaque soluta, aliquid inventore culpa aliquam totam tempora voluptatem eius. Illum eos voluptate magni vero consectetur architecto doloremque. Porro neque, ex dolore consequatur ullam rerum nulla, inventore voluptas quod labore, optio ab nostrum dicta fugiat ducimus odit vel veniam nisi. Quae aperiam voluptate blanditiis?</p>
+					<h4 id="scroll3">Third Heading</h4>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit dolorum consequuntur ipsum non architecto eaque soluta, aliquid inventore culpa aliquam totam tempora voluptatem eius. Illum eos voluptate magni vero consectetur architecto doloremque. Porro neque, ex dolore consequatur ullam rerum nulla, inventore voluptas quod labore, optio ab nostrum dicta fugiat ducimus odit vel veniam nisi. Quae aperiam voluptate blanditiis?</p>
+					<h4 id="scroll4">Fourth Heading</h4>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit dolorum consequuntur ipsum non architecto eaque soluta, aliquid inventore culpa aliquam totam tempora voluptatem eius. Illum eos voluptate magni vero consectetur architecto doloremque. Porro neque, ex dolore consequatur ullam rerum nulla, inventore voluptas quod labore, optio ab nostrum dicta fugiat ducimus odit vel veniam nisi. Quae aperiam voluptate blanditiis?</p>
+					<h4 id="scroll5">Fifth Heading</h4>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit dolorum consequuntur ipsum non architecto eaque soluta, aliquid inventore culpa aliquam totam tempora voluptatem eius. Illum eos voluptate magni vero consectetur architecto doloremque. Porro neque, ex dolore consequatur ullam rerum nulla, inventore voluptas quod labore, optio ab nostrum dicta fugiat ducimus odit vel veniam nisi. Quae aperiam voluptate blanditiis?</p>
 				</div>
 			</div>
-		</nav>
+		</div>
 	</div>
+	<script>
+		document.querySelectorAll('#nav-tab>[data-bs-toggle="tab"]').forEach(el => {
+			el.addEventListener('shown.bs.tab', () => {
+				const target = el.getAttribute('data-bs-target')
+				const scrollElem = document.querySelector(`${target} [data-bs-spy="scroll"]`)
+				bootstrap.ScrollSpy.getOrCreateInstance(scrollElem).refresh()
+			})
+		})
+	</script>
 	<script src="bootstrap/bootstrap.bundle.js"></script>
 </body>
 </html>
