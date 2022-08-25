@@ -9,54 +9,39 @@
 </head>
 <body>
 	<div class="container mt-3">
-		<div class="dropdown" novalidate>
-			<button class="btn btn-outline-primary dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown">Login</button>
-			<form class="dropdown-menu needs-validation p-4" novalidate>
-				<div class="mb-3">
-					<label for="email" class="form-label">Email</label>
-					<input type="email" class="form-control" placeholder="email@example.com" id="email" required>
-					<div class="valid-feedback">Looks Great!</div>
-					<div class="invalid-feedback">Have a Problem?</div>
+		<nav class="navbar navbar-dark bg-dark fixed-top">
+			<div class="container-fluid">
+				<a href="#" class="navbar-brand">Offcanvas Dark Navbar</a>
+				<button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offID">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+			<div class="offcanvas text-bg-dark offcanvas-end" id="offID">
+				<div class="offcanvas-header">
+					<h4 class="offcanvas-title">Offcanvas title</h4>
+					<button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
 				</div>
-				<div class="mb-3">
-					<label for="password" class="form-label">Password</label>
-					<input type="password" class="form-control" placeholder="Password" id="password" required>
-					<div class="valid-feedback">Looks Great!</div>
-					<div class="invalid-feedback">Have a Problem?</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+						<li class="nav-item"><a href="#" class="nav-link">Link</a></li>
+						<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-bd-toggle="dropdown">Dropdown</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Action</a></li>
+								<li><a class="dropdown-item" href="#">Another action</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="#">Something else here</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="d-flex">
+						<input type="search" class="form-control me-2" placeholder="Search">
+						<button class="btn btn-success">Seach</button>
+					</form>
 				</div>
-				<div class="mb-3">
-					<div class="form-check">
-						<input id="checkbox" type="checkbox" class="form-check-input" required>
-						<label for="checkbox" class="form-check-label">Remember me</label>
-						<div class="valid-feedback">Looks Great!</div>
-						<div class="invalid-feedback">You must agree before submitting</div>
-					</div>
-				</div>
-				<button class="btn btn-primary">Sign In</button>
-			</form>
-		</div>
+			</div>
+		</nav>
 	</div>
-	<script>
-		// Example starter JavaScript for disabling form submissions if there are invalid fields
-		(() => {
-			'use strict'
-
-			// Fetch all the forms we want to apply custom Bootstrap validation styles to
-			const forms = document.querySelectorAll('.needs-validation')
-
-			// Loop over them and prevent submission
-			Array.from(forms).forEach(form => {
-				form.addEventListener('submit', event => {
-					if (!form.checkValidity()) {
-						event.preventDefault()
-						event.stopPropagation()
-					}
-
-					form.classList.add('was-validated')
-				}, false)
-			})
-		})()
-	</script>
 	<script src="bootstrap/bootstrap.bundle.js"></script>
 </body>
 </html>
