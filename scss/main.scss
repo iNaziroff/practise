@@ -1,5 +1,8 @@
-$font-size: 40px;
+@import 'variables';
 
+@mixin property($property,$value){
+  #{$property}: $value;
+}
 *{
   margin: 0;
   padding: 0;
@@ -18,28 +21,39 @@ $font-size: 40px;
 }
 .brand-logo{
   h2{
-    font-size: $font-size;
-    color: rgb(49, 111, 192);
+    font-size: 40px;
+    color: $primary-color;
   }
 }
 .nav{
-  display: flex;
+  @include property(display,flex);
   &-list{
     display: flex;
     align-items: center;
     &__item{
       margin-right: 15px;
       a{
-        color: rgb(37, 125, 184);
+        color: $primary-color;
       }
     }
   }
-  .btn-search{
+  %btn{
     cursor: pointer;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    background-color: skyblue;
-    color: rgb(21, 75, 146);
+    color: rgb(255, 255, 255);
+    &:hover{
+      opacity: .6
+    }
+  }
+  .btn-search{
+    @extend %btn;
+    background-color: $primary-color;
+    margin-right: 5px;
+  }
+  .btn-sign{
+    @extend %btn;
+    background-color: $secondary-color;
   }
 }

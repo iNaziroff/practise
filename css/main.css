@@ -19,7 +19,7 @@
 
 .brand-logo h2 {
   font-size: 40px;
-  color: rgb(49, 111, 192);
+  color: #3498db;
 }
 
 .nav {
@@ -33,15 +33,24 @@
   margin-right: 15px;
 }
 .nav-list__item a {
-  color: rgb(37, 125, 184);
+  color: #3498db;
 }
-.nav .btn-search {
+.nav .btn-sign, .nav .btn-search {
   cursor: pointer;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
-  background-color: skyblue;
-  color: rgb(21, 75, 146);
+  color: rgb(255, 255, 255);
+}
+.nav .btn-sign:hover, .nav .btn-search:hover {
+  opacity: 0.6;
+}
+.nav .btn-search {
+  background-color: #3498db;
+  margin-right: 5px;
+}
+.nav .btn-sign {
+  background-color: #2ecc71;
 }
 
 /*# sourceMappingURL=main.css.map */
